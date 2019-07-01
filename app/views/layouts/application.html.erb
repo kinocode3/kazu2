@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+   <header class="navbar navbar-inverse">
+   <div class="container">
+     <%= link_to 'Myゲーム',games_path, class: "navbar-brand" %>
+     <ul class="nav navbar-nav navbar-right">
+       <li><%= link_to "トップに戻る", games_path %></li>
+       <li><%= link_to "ゲームを追加する", new_game_path %></li>
+       <li><%= link_to "ログインする" %></li>
+     </ul>
+   </div>
+  </header>
+  <div class="container">
+      <%= yield %>
+  </div>
+</body>
+</html>

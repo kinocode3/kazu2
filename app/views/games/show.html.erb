@@ -1,0 +1,7 @@
+<h1><%= @game.name %></h1>
+<P>ID:<%= @game_id%></P>
+<p>遊んだ日：<%= @game.date %></p>
+<p>評価：<%= @game.star %></p>
+<p>感想：<%= @game.impression %></p>
+<%= link_to 'トップに戻る', games_path %>
+<%= link_to '内容を変更する',edit_game_path(id: @game.id),target: "_brank" %>

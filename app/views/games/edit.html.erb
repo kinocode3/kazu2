@@ -1,0 +1,27 @@
+<p>ここはゲームを編集するページです。</p>
+
+<%= form_for(@game) do |f| %>
+
+  <div class="field">
+   <%= f.label :タイトル %><br>
+   <%=f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :遊んだ日 %><br>
+    <%=f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :"評価(☆マーク)"%><br>
+    <%=f.text_field :star %>
+  </div>
+  <div class="field">
+    <%= f.label :感想 %><br>
+    <%= f.text_area :impression, cols: 40, rows: 20 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit'編集する' %>
+  </div>
+<% end %>
+<%= link_to'編集せずに戻る。', game_path(id:@game.id),target:"brank" %>
+<%= button_to'削除',game_path(id: @game.id),method: :delete,data: { confirm: '本当に削除しますか?'} %>
